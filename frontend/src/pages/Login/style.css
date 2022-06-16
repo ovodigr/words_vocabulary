@@ -1,0 +1,111 @@
+.login {
+    margin-top: 100px;
+    height: 600px;
+    /* calc(100vh- 100px); */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    /* height: 95%; */
+    -webkit-box-shadow: -3px -1px 44px 14px rgba(77, 255, 71, 0.66);
+    box-shadow: -3px -1px 24px 4px rgba(86, 255, 71, 0.66);
+    border-radius: 20px;
+    /* background-color: cornsilk; */
+}
+
+.left,
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.or {
+    border: 2px solid rgb(26, 190, 219);
+    border-radius: 50%;
+    padding: 10px;
+    color: rgb(0, 4, 255);
+    font-weight: bold;
+    background-color: #A6FFFE;
+}
+
+.line {
+    width: 0.5px;
+    height: 70%;
+    background-color: lightgrey;
+    position: absolute;
+    /* top: o;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    /* margin: auto; */
+    z-index: -1;
+}
+
+.loginButton {
+    width: 150px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.google {
+    background-color: rgb(88, 209, 18);
+}
+
+.facebook {
+    background-color: rgb(40, 93, 240);
+}
+
+.github {
+    background-color: rgb(71, 68, 68);
+}
+
+.twitter {
+    background-color: rgb(0, 195, 255);
+}
+
+.inputLogin {
+    width: 200px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.submit {
+    width: 200px;
+    background-color: rgb(71, 194, 194);
+    color: beige;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.loginTitle {
+    position: absolute;
+    top: 60px;
+    color: darkcyan;
+}
