@@ -55,7 +55,7 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
 
             <ul className='list'>
                 <li className='listItem'>
-                    <img className='avatar' src={userData.photo} alt="" />
+                    <img className='avatar' src={userData.photo !== "" ? userData.photo : avatar.img} alt="" />
                 </li>
                 <li className='listItem'>
                     <span>{userData.username}</span>

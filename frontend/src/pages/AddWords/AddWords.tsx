@@ -11,7 +11,7 @@ const AddWords: React.FunctionComponent<IAddWordsProps> = (props) => {
 
     const dispatch = useAppDispatch();
 
-    const { ua, en } = useAppSelector(state => state.toolkit.word);
+    const { ua, en, userId, transcription, sound, date } = useAppSelector(state => state.toolkit.word);
 
     const [inputRef, setInputFocus] = useFocus();
 
@@ -21,7 +21,7 @@ const AddWords: React.FunctionComponent<IAddWordsProps> = (props) => {
 
             <input value={ua} onChange={e => dispatch(setUaWord(e.target.value))} />
 
-            <button onClick={() => { dispatch(AddWord(en, ua)); setInputFocus() }}>addWord</button>
+            <button onClick={() => { dispatch(AddWord(en, ua, userId, transcription, sound, date)); setInputFocus() }}>addWord</button>
         </div>
     );
 };

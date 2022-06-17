@@ -11,6 +11,6 @@ export interface DataState {
     ArrWords: IWord[];
     word: Word;
     canEditWord: boolean,
-    userData: IPerson | any,
+    userData: IPerson,
 }
 

@@ -44,7 +44,7 @@ async function startApp() {
     try {
         await mongoose.connect(REACT_APP_DB_URL, { useUnifiedTopology: true, useNewUrlParser: true });
 
-        app.listen(Port, () => console.log('Server started on port ' + Port));
+        app.listen(Port, () => console.log('Server started on port http://localhost:' + Port));
 
     } catch (e) {
         console.log(e);

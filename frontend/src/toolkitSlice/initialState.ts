@@ -8,7 +8,15 @@ export const initialState: DataState = {
     word: {
         ua: '',
         en: '',
+        userId: '1',
+        transcription: '',
+        sound: '',
+        date: '',
     },
     canEditWord: true,
-    userData: []
+    userData: {
+        'id': '',
+        'username': '',
+        'photo': '',
+    }
 }

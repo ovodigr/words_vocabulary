@@ -5,7 +5,15 @@ import { addWord, addWordSuccess, addWordError } from "../WordsSlice";
 import { API_URL } from 'config';
 import { fetchWords } from "./FetchWords";
 
-export const AddWord = (en: string, ua: string) => async (dispatch: AppDispatch) => {
+export const AddWord = (
+    en: string,
+    ua: string,
+    userId: string,
+    transcription: string,
+    sound: string,
+    date: string,
+
+) => async (dispatch: AppDispatch) => {
     try {
         dispatch(addWord());
 
@@ -13,7 +21,11 @@ export const AddWord = (en: string, ua: string) => async (dispatch: AppDispatch)
             API_URL.ADD_WORD,
             {
                 en: en,
-                ua: ua
+                ua: ua,
+                userId: userId,
+                transcription: '',
+                sound: '',
+                date: '17-06-2022',
             },
             {
                 headers: {
