@@ -5,7 +5,7 @@ import './style.css';
 import { avatar, header } from 'config'
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { GetUser } from 'toolkitSlice/redusers/user/GetUser';
-// import { GetUser } from 'GetUser';
+import { getUserData } from 'toolkitSlice/WordsSlice';
 interface IHeaderProps {
 }
 
@@ -15,24 +15,12 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
 
     const dispatch = useAppDispatch();
 
-    const { userData } = useAppSelector(state => state.toolkit)
-
-    console.log("userData", userData);
-
-    // let profileImage: string = header.img;
-
-    // let username: string = header.word;
-
     useEffect(() => {
         dispatch(GetUser());
 
-        // profileImage = userData.photo;
-
-        // username = userData.username;
-
-
-        console.log("userData", userData);
     }, [])
+
+    const { userData } = useAppSelector(state => state.toolkit)
 
     return (
         <div className="Header">

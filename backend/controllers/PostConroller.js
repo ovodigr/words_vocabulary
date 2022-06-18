@@ -30,9 +30,7 @@ class PostConroller {
 
         tryCatchMiddleware(req, res, async () => {
 
-            const posts = await Post.find({ userId: "1" }); //{ userId: "1" }
-
-            // console.log(posts);
+            const posts = await Post.find({ userId: req.body.userId });
 
             return res.json(posts.reverse());
 

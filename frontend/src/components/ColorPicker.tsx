@@ -9,8 +9,6 @@ interface IColorPickerProps {
 const ColorPicker: React.FunctionComponent<IColorPickerProps> = (props) => {
     const [color, setColor] = useState("#999666");
 
-    console.log(color);
-
     return <HexColorPicker color={color} onChange={setColor} />;
 };
 

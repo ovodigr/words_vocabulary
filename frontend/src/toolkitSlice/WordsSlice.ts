@@ -46,7 +46,7 @@ const toolkitSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
-        addWord(state) {
+        addWordLoading(state) {
             state.isLoading = true;
         },
         addWordSuccess(state, action: PayloadAction<IWord[]>) {
@@ -87,7 +87,7 @@ export const {
     wordDeleteSuccess,
     wordDeleteError,
     //add word
-    addWord,
+    addWordLoading,
     addWordSuccess,
     addWordError,
 

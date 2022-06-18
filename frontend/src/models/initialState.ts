@@ -1,5 +1,3 @@
-import { IUser } from './IUser';
-
 import { IWord, Word } from './Iword';
 
 import { IPerson } from './IUser';

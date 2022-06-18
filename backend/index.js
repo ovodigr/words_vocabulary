@@ -12,6 +12,7 @@ import fs from 'fs';
 import path from 'path';
 
 import dotenv from 'dotenv';
+import loginRouter from "./routes/loginRouter.js";
 
 dotenv.config();
 
@@ -39,6 +40,10 @@ app.use(express.json());
 app.use('/api', router);
 
 app.use('/auth', passRouter);
+
+app.use('/login', loginRouter);
+
+
 
 async function startApp() {
     try {

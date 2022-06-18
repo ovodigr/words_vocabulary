@@ -32,8 +32,6 @@ export const GetUser = () => async (dispatch: AppDispatch) => {
             photo: res.data.user.photos[0].value,
         };
 
-        console.log(person);
-
         dispatch(getUserSuccess(person));
     } catch (e: any) {
         dispatch(getUserError(e.message));

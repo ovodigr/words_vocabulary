@@ -16,7 +16,7 @@ const Word: React.FunctionComponent<IWordProps> = ({ uaWord, enWord, id }) => {
 
     const [canRotate, changeRotate] = useState(true);
 
-    const { canEditWord } = useAppSelector(state => state.toolkit)
+    const { canEditWord, userData } = useAppSelector(state => state.toolkit)
 
     const dispatch = useAppDispatch();
 
@@ -42,7 +42,7 @@ const Word: React.FunctionComponent<IWordProps> = ({ uaWord, enWord, id }) => {
                 {canEditWord && (
                     <div className={id}>
                         <img className='editWord ' src={IMG.EDIT_WORD} alt="" />
-                        <img className='deleteWord ' src={IMG.DELETE_WORD} alt="" onClick={() => dispatch(DeleteWord(id))} />
+                        <img className='deleteWord ' src={IMG.DELETE_WORD} alt="" onClick={() => dispatch(DeleteWord(userData.id, id))} />
                     </div>
 
                 )}

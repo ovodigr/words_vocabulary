@@ -10,7 +10,7 @@ interface IWordsProps {
 
 const CardWords: React.FunctionComponent<IWordsProps> = (props) => {
 
-    const [canEditWord, idRef, list, getAll, deleteWord] = useGetAll();
+    const [canEditWord, idRef, list, getAll] = useGetAll();
 
     const dispatch = useAppDispatch();
 

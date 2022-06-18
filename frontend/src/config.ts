@@ -15,10 +15,10 @@ export const PASSPORT = {
 };
 
 export const API_URL = {
-  GET_ALL: '/api/posts',
+  GET_ALL: '/api/posts/',
   GET_ONE: '/api/posts/',
   DELETE: '/api/posts/',
-  ADD_WORD: '/api/posts/',
+  ADD_WORD: '/api/create/',
 };
 
 export const IMG = {

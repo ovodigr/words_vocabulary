@@ -1,9 +1,11 @@
 import { AppDispatch } from ".."
 import axios from "api/axios";
 import { IPost } from "models/Iword";
-import { addWord, addWordSuccess, addWordError } from "../WordsSlice";
+import { addWordLoading, addWordSuccess, addWordError } from "../WordsSlice";
 import { API_URL } from 'config';
 import { fetchWords } from "./FetchWords";
+import { useAppDispatch } from "hooks/redux";
+
 
 export const AddWord = (
     en: string,
@@ -14,8 +16,13 @@ export const AddWord = (
     date: string,
 
 ) => async (dispatch: AppDispatch) => {
+
     try {
-        dispatch(addWord());
+        dispatch(addWordLoading());
+
+        const timeElapsed: number = Date.now();
+        const date: Date = new Date(timeElapsed);
+        date.toISOString();
 
         let res = await axios.post<IPost[]>(
             API_URL.ADD_WORD,
@@ -25,7 +32,7 @@ export const AddWord = (
                 userId: userId,
                 transcription: '',
                 sound: '',
-                date: '17-06-2022',
+                date: date,
             },
             {
                 headers: {
@@ -35,7 +42,7 @@ export const AddWord = (
             });
 
         dispatch(addWordSuccess(res.data));
-        dispatch(fetchWords());
+        dispatch(fetchWords(userId));
     } catch (e: any) {
 
         dispatch(addWordError(e.message));
