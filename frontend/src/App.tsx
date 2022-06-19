@@ -16,10 +16,10 @@ const App: React.FC<IAppProps> = (props) => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/card_words' element={<CardWords />} />
-        <Route path='/add_words' element={<AddWords />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/words/' element={<Main />} />
+        <Route path='/words/card_words' element={<CardWords />} />
+        <Route path='/words/add_words' element={<AddWords />} />
+        <Route path='/words/login' element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

@@ -11,7 +11,8 @@ export const PASSPORT = {
   GITHUB: '/auth/github',
   FACEBOOK: '/auth/facebook',
   TWITTER: '/auth/twitter',
-  LOGIN_SUCCESS: BASE_URL_SERVER + '/auth/login/success'
+  LOGIN_SUCCESS: BASE_URL_SERVER + '/auth/login/success',
+  LOGOUT: BASE_URL_SERVER + '/auth/logout',
 };
 
 export const API_URL = {
@@ -41,6 +42,6 @@ export const header = {
   img: BASE_DIR + '/images/uk2.png',
   word: BASE_DIR + '/images/en2.png',
   login: BASE_DIR + '/images/login1.png',
-  logout: BASE_DIR + '/images/logout.png',
+  logout: BASE_DIR + '/images/logout1.png',
 };
 

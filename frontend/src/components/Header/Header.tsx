@@ -5,21 +5,21 @@ import './style.css';
 import { avatar, header } from 'config'
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { GetUser } from 'toolkitSlice/redusers/user/GetUser';
-import { getUserData } from 'toolkitSlice/WordsSlice';
+import { social_img, PASSPORT } from 'config'
 interface IHeaderProps {
 }
 
 const Header: React.FunctionComponent<IHeaderProps> = (props) => {
 
-    let login = false;
-
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(GetUser());
-
     }, [])
 
+    const logout = () => {
+        window.open(PASSPORT.LOGOUT, '_self')
+    }
     const { userData } = useAppSelector(state => state.toolkit)
 
     return (
@@ -27,18 +27,16 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
             <ul className='menu'>
 
                 <li className='listItem'>
-                    <NavLink to="/">
+                    <NavLink to="/words/">
                         <img className='headerImg' src={header.img} alt="" />
                     </NavLink>
                 </li>
 
                 <li className='listItem'>
-                    <NavLink to="/card_words">
+                    <NavLink to="/words/card_words">
                         <img className='headerImg' src={header.word} alt="" />
                     </NavLink>
                 </li>
-
-
             </ul>
 
             <ul className='list'>
@@ -49,18 +47,19 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
                     <span>{userData.username}</span>
                 </li>
                 <li className='listItem'>
-                    <NavLink to="/login">
-                        {login
-                            ?
-                            <img className='headerImg' src={header.logout} alt="" />
-                            :
-                            <img className='headerImg' src={header.login} alt="" />}
-                    </NavLink>
+
+                    {userData.id !== ''
+                        ?
+                        <img className='headerImg' onClick={logout} src={header.logout} alt="" />
+                        :
+                        <NavLink to="/words/login">
+                            <img className='headerImg' src={header.login} alt="" />
+                        </NavLink>
+                    }
+
+
                 </li>
-
-
             </ul>
-
         </div >
     );
 };
