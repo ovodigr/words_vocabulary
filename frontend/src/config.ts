@@ -4,6 +4,9 @@ export const BASE_URL_LOCAL = 'http://localhost';
 export const BASE_DIR = '/words/';
 // export const BASE_DIR = '';
 
+export const LOGIN = {
+  CREATE_USER: BASE_URL_SERVER + '/login/create/',
+};
 
 export const PASSPORT = {
   URl: BASE_URL_SERVER,

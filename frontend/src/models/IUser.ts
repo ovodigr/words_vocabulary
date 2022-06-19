@@ -20,3 +20,9 @@ export type IPerson = {
     username: string;
     photo: string;
 }
+
+export type ILogin = {
+    username: string;
+    login: string;
+}
+

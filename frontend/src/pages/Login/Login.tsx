@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { social_img, PASSPORT } from 'config'
 import './style.css';
+import { useAppDispatch } from 'hooks/redux';
 
+import { login } from 'toolkitSlice/redusers/user/Login';
 interface ILoginProps {
 }
 
@@ -23,6 +25,11 @@ const Login: React.FunctionComponent<ILoginProps> = (props) => {
     //     window.open(PASSPORT.URl + PASSPORT.TWITTER, '_self')
     // }
 
+    const dispatch = useAppDispatch();
+
+    const log = () => {
+        dispatch(login('1', '1'));
+    }
 
     return (
         <div className='login' >
@@ -54,7 +61,7 @@ const Login: React.FunctionComponent<ILoginProps> = (props) => {
                 <div className='right'>
                     <input className='inputLogin' type="text" placeholder='Username' />
                     <input className='inputLogin' type="text" placeholder='Password' />
-                    <button className='submit'>Login</button>
+                    <button className='submit' onClick={log}>Login</button>
                 </div>
             </div>
         </div >

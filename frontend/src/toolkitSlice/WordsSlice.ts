@@ -7,9 +7,7 @@ const toolkitSlice = createSlice({
     name: 'toolkit',
     initialState,
     reducers: {
-        increment: (state, action: PayloadAction<number>) => {
-            state.count = state.count + 1
-        },
+
         setEditWordStatus: (state, action: PayloadAction<boolean>) => {
             state.canEditWord = action.payload
         },
@@ -72,12 +70,25 @@ const toolkitSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
+
+        logining(state) {
+            state.isLoading = true;
+        },
+        loginSuccess(state, action: PayloadAction<any>) {
+            state.isLoading = false;
+            state.error = '';
+            state.userData = action.payload;
+        },
+        loginError(state, action: PayloadAction<string>) {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
+
     },
 })
 
 export default toolkitSlice.reducer;
 export const {
-    increment,
     //fetch words
     wordsFetching,
     wordsFetchingSuccess,
@@ -99,9 +110,14 @@ export const {
     setEditWordStatus,
 
     //get User data
-
     getUserData,
     getUserSuccess,
     getUserError,
+
+    //login 
+    logining,
+    loginSuccess,
+    loginError,
+
 
 } = toolkitSlice.actions
