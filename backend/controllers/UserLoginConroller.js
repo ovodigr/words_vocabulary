@@ -1,28 +1,41 @@
 import UserLogin from "../services/UserLogin.js";
-// import { tryCatchMiddleware } from "../middleware/tryCatchMiddleware.js";
+import dotenv from 'dotenv';
+import CryptoJS from "crypto-js";
+
+dotenv.config();
+
+const { REACT_APP_SOL } = process.env;
 
 class UserLoginConroller {
 
     async create(req, res) {
         try {
-            const { username, login, date } = req.body;
+            let { username, password, date } = req.body;
 
             console.log(req.body);
 
-            const user = await UserLogin.create(
-                {
-                    username,
-                    login,
-                    date,
-                });
+            if (username != undefined || password != undefined) {
 
-            return res.json(user);
+                password = await CryptoJS.HmacSHA1(password, REACT_APP_SOL).toString();
+
+                const user = await UserLogin.create(
+                    {
+                        username,
+                        password,
+                        date,
+                    });
+
+                console.log(user);
+
+                return res.json(user);
+            }
+            else
+                return res.json({ message: 'enter username and password' });
 
         } catch (error) {
             res.status(500);
         }
     }
 }
-
 
 export default new UserLoginConroller();

@@ -6,7 +6,7 @@ import { LOGIN } from 'config';
 
 export const login = (
     username: string,
-    login: string,
+    password: string,
 
 ) => async (dispatch: AppDispatch) => {
     try {
@@ -19,7 +19,7 @@ export const login = (
         let res = await axios.post<ILogin[]>(LOGIN.CREATE_USER,
             {
                 username: username,
-                login: login,
+                password: password,
                 date: date,
             },
             {

@@ -28,7 +28,7 @@ const Login: React.FunctionComponent<ILoginProps> = (props) => {
     const dispatch = useAppDispatch();
 
     const log = () => {
-        dispatch(login('1', '1'));
+        dispatch(login('2', '3'));
     }
 
     return (
