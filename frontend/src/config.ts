@@ -2,11 +2,14 @@ export const BASE_URL_SERVER = 'https://peak.pp.ua';
 export const BASE_URL_LOCAL = 'http://localhost';
 
 export const BASE_DIR = '/words/';
-// export const BASE_DIR = '';
 
 export const LOGIN = {
   CREATE_USER: BASE_URL_SERVER + '/login/create/',
 };
+
+export const USER_ID_DEFAULT = '1';
+export const USER_NAME_DEFAULT = 'White Rabbit';
+export const USER_PHOTO_DEFAULT = BASE_DIR + 'images/avatar1.png';
 
 export const PASSPORT = {
   URl: BASE_URL_SERVER,

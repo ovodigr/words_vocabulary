@@ -14,8 +14,23 @@ export const initialState: DataState = {
         date: '',
     },
     canEditWord: true,
+
+    arrDeleteWord: {
+        showDeleteWordPopup: false,
+        id: '',
+        userId: '',
+    },
+
+    arrChangeWord: {
+        showChangeWordPopup: false,
+        id: '',
+        ua: '',
+        en: '',
+        userId: '',
+    },
+
     userData: {
-        'id': '1',
+        'id': '',
         'username': '',
         'photo': '',
     }

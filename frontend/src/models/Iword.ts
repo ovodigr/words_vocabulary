@@ -25,3 +25,18 @@ export type IPost = {
     date: string;
 }
 
+
+export type IDeleteWord = {
+    showDeleteWordPopup: boolean,
+    id: string,
+    userId: string,
+}
+
+export type IChangeWord = {
+    showChangeWordPopup: boolean,
+    id: string,
+    ua: string,
+    en: string,
+    userId: string,
+}
+

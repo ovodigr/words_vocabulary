@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IWord } from '../models/Iword';
-import { IUser } from '../models/IUser';
+import { IWord, IChangeWord, IDeleteWord } from '../models/Iword';
 import { initialState } from './initialState';
 
 const toolkitSlice = createSlice({
@@ -8,6 +7,7 @@ const toolkitSlice = createSlice({
     initialState,
     reducers: {
 
+        //add word in buffer
         setEditWordStatus: (state, action: PayloadAction<boolean>) => {
             state.canEditWord = action.payload
         },
@@ -18,6 +18,7 @@ const toolkitSlice = createSlice({
             state.word.ua = action.payload;
         },
 
+        //fetch words
         wordsFetching(state) {
             state.isLoading = true;
         },
@@ -32,6 +33,8 @@ const toolkitSlice = createSlice({
             state.error = action.payload;
         },
 
+
+        //delete word
         wordDelete(state) {
             state.isLoading = true;
         },
@@ -44,6 +47,19 @@ const toolkitSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
+
+        //show delete word popup
+        showDeleteWordPopup(state, action: PayloadAction<IDeleteWord>) {
+            state.arrDeleteWord = action.payload;
+        },
+
+        //show change word popup
+        showChangeWordPopup(state, action: PayloadAction<IChangeWord>) {
+            state.arrChangeWord = action.payload;
+        },
+
+
+        //add word
         addWordLoading(state) {
             state.isLoading = true;
         },
@@ -58,6 +74,8 @@ const toolkitSlice = createSlice({
             state.error = action.payload;
         },
 
+
+        //get User data
         getUserData(state) {
             state.isLoading = true;
         },
@@ -71,6 +89,8 @@ const toolkitSlice = createSlice({
             state.error = action.payload;
         },
 
+
+        //login 
         logining(state) {
             state.isLoading = true;
         },
@@ -101,6 +121,12 @@ export const {
     addWordLoading,
     addWordSuccess,
     addWordError,
+
+    //show popup
+    showDeleteWordPopup,
+
+    //show change word popup
+    showChangeWordPopup,
 
     //add word in buffer
     setEnWord,

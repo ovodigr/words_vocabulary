@@ -5,7 +5,7 @@ import './style.css';
 import { avatar, header } from 'config'
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { GetUser } from 'toolkitSlice/redusers/user/GetUser';
-import { social_img, PASSPORT } from 'config'
+import { social_img, PASSPORT, USER_ID_DEFAULT } from 'config'
 interface IHeaderProps {
 }
 
@@ -15,6 +15,9 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
 
     useEffect(() => {
         dispatch(GetUser());
+
+        console.log('GetUser');
+
     }, [])
 
     const logout = () => {
@@ -48,7 +51,7 @@ const Header: React.FunctionComponent<IHeaderProps> = (props) => {
                 </li>
                 <li className='listItem'>
 
-                    {userData.id !== ''
+                    {userData.id !== USER_ID_DEFAULT
                         ?
                         <img className='headerImg' onClick={logout} src={header.logout} alt="" />
                         :
