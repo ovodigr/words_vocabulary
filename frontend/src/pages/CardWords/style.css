@@ -9,11 +9,12 @@
 }
 
 .container {
+    margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 500px);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 1rem;
     justify-content: space-evenly;
-    /* justify-items: center;
-    align-content: space-evenly;
-    align-items: center; */
+    justify-items: center;
+    /* align-content: space-evenly; */
+    /* align-items: center; */
 }

@@ -24,6 +24,9 @@ export const AddWord = (
         const date: Date = new Date(timeElapsed);
         date.toISOString();
 
+
+
+
         let res = await axios.post<IPost[]>(
             API_URL.ADD_WORD,
             {

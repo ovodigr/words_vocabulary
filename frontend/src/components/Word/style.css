@@ -1,32 +1,55 @@
-.Word-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* text-align: center; */
-    font-size: 24px;
-    font-weight: bold;
-    background-color: white;
-    border-radius: 50px;
-    border: 3px solid rgb(104, 247, 9);
-    /* -webkit-box-shadow: 4px -2px 22px -3px rgba(87, 255, 119, 0.75); */
-    /* box-shadow: 4px -2px 22px -3px rgba(87, 255, 119, 0.75); */
-    box-shadow: 0 0 10px rgb(13, 222, 230);
-    padding: 30px;
-    margin: 20px;
-    min-width: 150px;
-    width: 350px;
+@media (min-width: 0px) {
+    .Word {
+        margin: auto;
+        padding-right: 20px;
+        padding: 30px 30px;
+        background-color: white;
+        border: 1px solid rgb(104, 247, 9);
+    }
+    .Word-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 50px;
+        border: 3px solid rgb(104, 247, 9);
+        box-shadow: 0 0 10px rgb(13, 222, 230);
+        padding: 20px;
+        /* margin: 20px; */
+        min-width: 100px;
+        width: 300px;
+    }
 }
 
-.Word {
-    margin: auto;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    padding: 30px 30px;
-    background-color: white;
-    /* border-radius: 5px; */
-    border: 1px solid rgb(104, 247, 9);
-    /* box-shadow: 0 0 10px rgb(13, 222, 230); */
-}
+
+/* @media (max-width: 600px) {
+    .Word {
+        margin: auto;
+        padding-right: 10px;
+        padding: 10px 10px;
+        background-color: white;
+        border: 1px solid rgb(104, 247, 9);
+    }
+    .Word-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 50px;
+        border: 3px solid rgb(104, 247, 9);
+        box-shadow: 0 0 10px rgb(13, 222, 230);
+        padding: 20px;
+        margin: 20px;
+        min-width: 100px;
+        width: 250px;
+    }
+} */
 
 .editWord,
 .deleteWord {
