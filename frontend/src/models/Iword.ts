@@ -15,6 +15,11 @@ export type Word = {
     date: string;
 }
 
+export type ChangeWord = {
+    ua: string;
+    en: string;
+}
+
 export type IPost = {
     ua: string;
     en: string;

@@ -10,26 +10,27 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 650px) {
+@media (max-width: 650px),
+(max-height: 600px) {
     .popup_open {
         position: absolute;
         left: 20%;
         right: 20%;
-        top: 35%;
-        bottom: 35%;
+        top: 30%;
+        bottom: 30%;
         margin: auto;
         border-radius: 20px;
         background: beige;
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 650px) and (min-height: 650px) {
     .popup_open {
         position: absolute;
         left: 30%;
         right: 30%;
-        top: 40%;
-        bottom: 40%;
+        top: 35%;
+        bottom: 35%;
         margin: auto;
         border-radius: 20px;
         background: beige;
@@ -48,13 +49,14 @@
     align-items: center;
 }
 
-.deleteWrap {
-    display: flex;
-    flex-direction: row;
+.changeYes {
+    display: block;
+    margin: 10px auto;
 }
 
-.deleteYes,
-.deleteNo {
-    margin: 0 15px;
-    width: 80px;
+.inputChangeWord {
+    display: block;
+    margin: 10px auto;
+    padding: 15px 20px;
+    width: 25vw;
 }

@@ -1,15 +1,14 @@
 import { AppDispatch } from ".."
 import axios from "api/axios";
 import { IPost } from "models/Iword";
-import { addWordLoading, addWordSuccess, addWordError } from "../WordsSlice";
+import { changeWordLoading, changeWordSuccess, changeWordError } from "../WordsSlice";
 import { API_URL } from 'config';
 import { fetchWords } from "./FetchWords";
-import { useAppDispatch } from "hooks/redux";
-
 
 export const ChangeWord = (
     en: string,
     ua: string,
+    id: string,
     userId: string,
     transcription: string,
     sound: string,
@@ -18,17 +17,18 @@ export const ChangeWord = (
 ) => async (dispatch: AppDispatch) => {
 
     try {
-        dispatch(addWordLoading());
+        dispatch(changeWordLoading());
 
         const timeElapsed: number = Date.now();
         const date: Date = new Date(timeElapsed);
         date.toISOString();
 
         let res = await axios.post<IPost[]>(
-            API_URL.ADD_WORD,
+            API_URL.CHANGE_WORD,
             {
                 en: en,
                 ua: ua,
+                _id: id,
                 userId: userId,
                 transcription: '',
                 sound: '',
@@ -41,10 +41,10 @@ export const ChangeWord = (
                 },
             });
 
-        dispatch(addWordSuccess(res.data));
+        dispatch(changeWordSuccess(res.data));
         dispatch(fetchWords(userId));
     } catch (e: any) {
 
-        dispatch(addWordError(e.message));
+        dispatch(changeWordError(e.message));
     }
 }

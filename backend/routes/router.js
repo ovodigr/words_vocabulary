@@ -19,9 +19,8 @@ router.post('/posts/', PostConroller.getAll);
 
 router.get('/posts/:id', PostConroller.getOne);
 
-router.put('/posts/', PostConroller.update);
+router.post('/change/', PostConroller.update);
 
 router.delete('/posts/:id', PostConroller.del);
-
 
 export default router;

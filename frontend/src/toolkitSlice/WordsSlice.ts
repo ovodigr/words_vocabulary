@@ -18,6 +18,17 @@ const toolkitSlice = createSlice({
             state.word.ua = action.payload;
         },
 
+        //add  change word in buffer
+        setChangeWordStatus: (state, action: PayloadAction<boolean>) => {
+            state.canEditWord = action.payload;
+        },
+        setChangeEnWord(state, action: PayloadAction<string>) {
+            state.changeWord.en = action.payload;
+        },
+        setChangeUaWord(state, action: PayloadAction<string>) {
+            state.changeWord.ua = action.payload;
+        },
+
         //fetch words
         wordsFetching(state) {
             state.isLoading = true;
@@ -74,6 +85,22 @@ const toolkitSlice = createSlice({
             state.error = action.payload;
         },
 
+        //change word
+        changeWordLoading(state) {
+            state.isLoading = true;
+        },
+        changeWordSuccess(state, action: PayloadAction<IWord[]>) {
+            state.isLoading = false;
+            state.error = '';
+            state.word.en = '';
+            state.word.ua = '';
+        },
+        changeWordError(state, action: PayloadAction<string>) {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
+
+
 
         //get User data
         getUserData(state) {
@@ -109,6 +136,17 @@ const toolkitSlice = createSlice({
 
 export default toolkitSlice.reducer;
 export const {
+
+    //add word in buffer
+    setEnWord,
+    setUaWord,
+
+    //add changed word in buffer
+    setChangeWordStatus,
+    setChangeEnWord,
+    setChangeUaWord,
+
+
     //fetch words
     wordsFetching,
     wordsFetchingSuccess,
@@ -122,15 +160,18 @@ export const {
     addWordSuccess,
     addWordError,
 
+    //change word
+    changeWordLoading,
+    changeWordSuccess,
+    changeWordError,
+
     //show popup
     showDeleteWordPopup,
 
     //show change word popup
     showChangeWordPopup,
 
-    //add word in buffer
-    setEnWord,
-    setUaWord,
+
 
     //can change word
     setEditWordStatus,

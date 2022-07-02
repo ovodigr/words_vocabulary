@@ -5,6 +5,11 @@ export const initialState: DataState = {
     error: '',
     count: 0,
     ArrWords: [],
+
+    changeWord: {
+        ua: '',
+        en: '',
+    },
     word: {
         ua: '',
         en: '',

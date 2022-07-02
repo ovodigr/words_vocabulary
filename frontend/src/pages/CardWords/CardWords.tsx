@@ -17,10 +17,7 @@ const CardWords: React.FunctionComponent<IWordsProps> = (props) => {
 
     const [canEditWord, idRef, list, getAll] = useGetAll();
 
-    // const { userData } = useAppSelector(state => state.toolkit)
-    const { arrDeleteWord } = useAppSelector(state => state.toolkit);
-
-    const { arrChangeWord } = useAppSelector(state => state.toolkit);
+    const { arrDeleteWord, arrChangeWord } = useAppSelector(state => state.toolkit);
 
     const dispatch = useAppDispatch();
 
@@ -55,10 +52,10 @@ const CardWords: React.FunctionComponent<IWordsProps> = (props) => {
         dispatch(showChangeWordPopup(wordChange))
     }
 
-    let { en, ua, userId } = arrChangeWord;
+    let { id, en, ua, userId } = arrChangeWord;
 
-    const changeWord = (): void => {
-        dispatch(ChangeWord(en, ua, userId, '', '', ''));
+    const changeWord = (en: string, ua: string): void => {
+        dispatch(ChangeWord(en, ua, id, userId, '', '', ''));
         toggleChangePopup();
     }
 
@@ -71,9 +68,6 @@ const CardWords: React.FunctionComponent<IWordsProps> = (props) => {
                 <span>Редагувати</span>
                 <AddWords />
             </div>
-
-
-
 
             <div className='container'>
                 {list}
@@ -91,7 +85,7 @@ const CardWords: React.FunctionComponent<IWordsProps> = (props) => {
                 arrChangeWord.showChangeWordPopup &&
 
                 <ChangePopup
-                    content={'ua en '}
+                    content={'Change word'}
                     handleClose={toggleChangePopup}
                     handleChange={changeWord}
                 />

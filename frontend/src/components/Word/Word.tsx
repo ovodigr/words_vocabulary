@@ -5,7 +5,7 @@ import { IMG } from 'config'
 import './style.css';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { DeleteWord } from 'toolkitSlice/redusers/DeleteWord';
-import { showChangeWordPopup, showDeleteWordPopup } from 'toolkitSlice/WordsSlice';
+import { setChangeEnWord, setChangeUaWord, setEnWord, setUaWord, showChangeWordPopup, showDeleteWordPopup } from 'toolkitSlice/WordsSlice';
 import { IChangeWord, IDeleteWord } from 'models/Iword';
 
 interface IWordProps {
@@ -43,6 +43,14 @@ const Word: React.FunctionComponent<IWordProps> = ({ uaWord, enWord, id }) => {
         userId: userData.id,
     }
 
+    const dispatchALL = () => {
+
+        dispatch(showChangeWordPopup(ChangeWord));
+
+        dispatch(setChangeEnWord(ChangeWord.en));
+
+        dispatch(setChangeUaWord(ChangeWord.ua));
+    }
     return (
         <div className='Word-block'>
 
@@ -57,7 +65,7 @@ const Word: React.FunctionComponent<IWordProps> = ({ uaWord, enWord, id }) => {
 
                 {canEditWord && (
                     <div className={id}>
-                        <img className='editWord ' src={IMG.EDIT_WORD} alt="" onClick={() => dispatch(showChangeWordPopup(ChangeWord))} />
+                        <img className='editWord ' src={IMG.EDIT_WORD} alt="" onClick={() => dispatchALL()} />
                         <img className='deleteWord ' src={IMG.DELETE_WORD} alt="" onClick={() => dispatch(showDeleteWordPopup(DeleteWord))} />
                     </div>
                 )}

@@ -18,7 +18,7 @@ const AddWords: React.FunctionComponent<IAddWordsProps> = (props) => {
 
     return (
         <div>
-            <input className='inputWord' value={en} ref={inputRef} onChange={e => dispatch(setEnWord(e.target.value))} />
+            <input className='inputWord' value={en} onChange={e => dispatch(setEnWord(e.target.value))} />
 
             <input className='inputWord' value={ua} onChange={e => dispatch(setUaWord(e.target.value))} />
 

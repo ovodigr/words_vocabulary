@@ -82,6 +82,7 @@ class PostConroller {
     }
 
     async update(req, res) {
+        console.log(req.body);
         try {
             const post = req.body;
 

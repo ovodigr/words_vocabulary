@@ -26,6 +26,7 @@ export const API_URL = {
   GET_ONE: '/api/posts/',
   DELETE: '/api/posts/',
   ADD_WORD: '/api/create/',
+  CHANGE_WORD: '/api/change/',
 };
 
 export const IMG = {

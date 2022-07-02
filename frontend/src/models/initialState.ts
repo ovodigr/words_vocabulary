@@ -1,4 +1,4 @@
-import { IWord, Word, IDeleteWord, IChangeWord } from './Iword';
+import { IWord, Word, IDeleteWord, IChangeWord, ChangeWord } from './Iword';
 
 import { IPerson } from './IUser';
 
@@ -8,6 +8,8 @@ export interface DataState {
     count: number;
     ArrWords: IWord[];
     word: Word;
+
+    changeWord: ChangeWord,
 
     arrDeleteWord: IDeleteWord,
 
