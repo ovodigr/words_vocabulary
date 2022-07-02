@@ -18,7 +18,7 @@
         display: flex;
         align-items: center;
         flex-direction: row;
-        width: 60%;
+        width: 80%;
         /* height: 95%; */
         -webkit-box-shadow: -3px -1px 44px 14px rgba(77, 255, 71, 0.66);
         box-shadow: -3px -1px 24px 4px rgba(86, 255, 71, 0.66);
@@ -54,6 +54,15 @@
         position: absolute;
         z-index: -1;
     }
+    .loginButton {
+        width: 15vw;
+    }
+    .inputLogin {
+        width: 15vw;
+    }
+    .submit {
+        width: 15vw;
+    }
 }
 
 @media (max-width: 800px) {
@@ -61,7 +70,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: 60%;
+        width: 80%;
         /* height: 95%; */
         -webkit-box-shadow: -3px -1px 44px 14px rgba(77, 255, 71, 0.66);
         box-shadow: -3px -1px 24px 4px rgba(86, 255, 71, 0.66);
@@ -92,10 +101,18 @@
     .line {
         display: none;
     }
+    .loginButton {
+        width: 25vw;
+    }
+    .inputLogin {
+        width: 25vw;
+    }
+    .submit {
+        width: 25vw;
+    }
 }
 
 .loginButton {
-    width: 15vw;
     padding: 15px 25px;
     border-radius: 5px;
     color: white;
@@ -105,13 +122,11 @@
 }
 
 .inputLogin {
-    width: 15vw;
     padding: 15px 20px;
     margin-bottom: 20px;
 }
 
 .submit {
-    width: 20vw;
     background-color: rgb(71, 194, 194);
     color: beige;
     font-weight: bold;
