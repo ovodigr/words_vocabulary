@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './style.css';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { setEnWord, setUaWord } from 'toolkitSlice/WordsSlice';
 import { AddWord } from 'toolkitSlice/redusers/AddWord';
@@ -17,11 +18,11 @@ const AddWords: React.FunctionComponent<IAddWordsProps> = (props) => {
 
     return (
         <div>
-            <input value={en} ref={inputRef} onChange={e => dispatch(setEnWord(e.target.value))} />
+            <input className='inputWord' value={en} ref={inputRef} onChange={e => dispatch(setEnWord(e.target.value))} />
 
-            <input value={ua} onChange={e => dispatch(setUaWord(e.target.value))} />
+            <input className='inputWord' value={ua} onChange={e => dispatch(setUaWord(e.target.value))} />
 
-            <button onClick={() => {
+            <button className='addWordButton' onClick={() => {
 
                 dispatch(AddWord(en, ua, userData.id, transcription, sound, date)); setInputFocus();
 

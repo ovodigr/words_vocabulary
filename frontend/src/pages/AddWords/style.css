@@ -1,0 +1,10 @@
+.addWordButton {
+    display: block;
+    margin: 0 auto;
+}
+
+.inputWord {
+    display: block;
+    margin: 5px auto;
+    padding: 10px 10px;
+}

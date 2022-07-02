@@ -64,10 +64,17 @@ const CardWords: React.FunctionComponent<IWordsProps> = (props) => {
 
     return (
         <div className='CardWords'>
-            <button onClick={getAll}>Get All</button>
-            <input type="checkbox" checked={canEditWord} onChange={() => dispatch(setEditWordStatus(!canEditWord))} />
-            <span>Редагувати</span>
-            <AddWords />
+
+            <div className='getWordsFields'>
+                <button onClick={getAll}>Get All</button>
+                <input type="checkbox" checked={canEditWord} onChange={() => dispatch(setEditWordStatus(!canEditWord))} />
+                <span>Редагувати</span>
+                <AddWords />
+            </div>
+
+
+
+
             <div className='container'>
                 {list}
             </div>
